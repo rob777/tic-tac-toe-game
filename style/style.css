@@ -1,0 +1,24 @@
+.well {
+    margin: 0 auto;
+    height: 300px;
+    width: 300px;
+    background-color: #A6D9D2;
+}
+h1 {
+    font-weight: bold;
+    margin-top: 50px;
+    color: #64686A;
+}
+.cubs {
+    text-align: center;
+    border: 5px solid white;
+    color: #64686A;
+    font-weight: bold;
+    font-size: 50px;
+    height: 86px;
+    width: 86px;
+}
+.score {
+    font-size: 50px;
+    color: #64686A;
+}
