@@ -1,6 +1,6 @@
 var main = function() {
-    //determine player's side
 
+    //determine player's side
     function playerSide() {
         plSide = prompt('Neo, choose the pill - X or O').toUpperCase();
         if (plSide !== 'X' && plSide !== 'O') {
@@ -17,20 +17,26 @@ var main = function() {
         computerTurn = 'X';
     }
 
+    var $userScore = 0;
+    var $tie = 0;
+    var $computerScore = 0;
+
     //switching turns between player and computer and checking for winner
     $('.cubs').click(function() {
         if ($(this).text() === '') {
             $(this).text(playerTurn);
             computerMove();
-        } else {
-            alert('Incorrect move, Neo!');
         }
         if (win(playerTurn)) {
-            alert('Winner!');
+            alert('Neo, you win!');
             $('.cubs').text('');
+            $userScore++;
+            $('.userScore').text($userScore);
         } else if (win(computerTurn)) {
-            alert('Winner!');
+            alert('Neo, you lose...');
             $('.cubs').text('');
+            $computerScore++;
+            $('.computerScore').text($computerScore);
         }
         if ($('#1').text() !== '' &&
             $('#2').text() !== '' &&
@@ -43,6 +49,8 @@ var main = function() {
             $('#9').text() !== '') {
             alert('Tie!');
             $('.cubs').text('');
+            $tie++;
+            $('.tie').text($tie);
         }
     });
 
